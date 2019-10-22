@@ -1,0 +1,11 @@
+name: build
+on: push
+jobs:
+  install:
+    name: Run test 2nd pass
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - run: yarn
+      - run: yarn lint
+      - run: yarn test
